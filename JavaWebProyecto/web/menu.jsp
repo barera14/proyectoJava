@@ -18,11 +18,11 @@
           <!-- If the main navigation has sub navigation, then add the class "has_submenu" to "li" of main navigation. -->
           <ul class="navi">
             <!-- Use the class nred, ngreen, nblue, nlightblue, nviolet or norange to add background color. You need to use this in <li> tag. -->
- <!-- Usuario -->
+<!-- Usuario -->
             <li class="has_submenu nlightblue">
               <a href="#">
                 <!-- Menu name with icon -->
-                <i class="icon-th"></i> Usuario 
+                <i class="icon-th"></i> Clientes
                 <!-- Icon for dropdown -->
                 <span class="pull-right"><i class="icon-angle-right"></i></span>
               </a>
@@ -37,7 +37,7 @@
             <li class="has_submenu nlightblue">
               <a href="#">
                 <!-- Menu name with icon -->
-                <i class="icon-th"></i> Salones 
+                <i class="icon-th"></i> Productos 
                 <!-- Icon for dropdown -->
                 <span class="pull-right"><i class="icon-angle-right"></i></span>
               </a>
@@ -52,7 +52,7 @@
             <li class="has_submenu nlightblue">
               <a href="#">
                 <!-- Menu name with icon -->
-                <i class="icon-th"></i> Profesores 
+                <i class="icon-th"></i> Empleados 
                 <!-- Icon for dropdown -->
                 <span class="pull-right"><i class="icon-angle-right"></i></span>
               </a>
@@ -68,7 +68,7 @@
  <li class="has_submenu nlightblue">
               <a href="#">
                 <!-- Menu name with icon -->
-                <i class="icon-th"></i> Materias 
+                <i class="icon-th"></i> Cotizaciones 
                 <!-- Icon for dropdown -->
                 <span class="pull-right"><i class="icon-angle-right"></i></span>
               </a>
