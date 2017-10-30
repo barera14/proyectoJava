@@ -54,7 +54,7 @@
                     <h6>Registrar Empleado</h6>
                     <hr />
                     <!-- Form starts.  -->
-                     <form action="../UsuariosC?action=create" method="post" class="form-horizontal" role="form">
+                     <form action="EmpleadosController?action=create" method="post" class="form-horizontal" role="form">
                               
                                 <div class="form-group">
                                   <label class="col-lg-4 control-label">Nombres</label>
@@ -74,12 +74,7 @@
                                       <input name="documento" type="number" class="form-control" placeholder="Documento">
                                   </div>
                                 </div>
-                                 <div class="form-group">
-                                  <label class="col-lg-4 control-label">Direccion</label>
-                                  <div class="col-lg-8">
-                                      <input name="direccion" type="text" class="form-control" placeholder="Direccion">
-                                  </div>
-                                </div>
+                                 
                                  <div class="form-group">
                                   <label class="col-lg-4 control-label">Correo</label>
                                   <div class="col-lg-8">
