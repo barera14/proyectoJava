@@ -54,12 +54,12 @@
                     <h6>Registrar Cliente</h6>
                     <hr />
                     <!-- Form starts.  -->
-                     <form action="../UsuariosC?action=create" method="post" class="form-horizontal" role="form">
+                     <form action="../ClientesController?action=create" method="post" class="form-horizontal" role="form">
                               
                                 <div class="form-group">
                                   <label class="col-lg-4 control-label">Razon Social</label>
                                   <div class="col-lg-8">
-                                    <input name="razonsocial" type="text" class="form-control" placeholder="Razon Social">
+                                    <input name="razon_social" type="text" class="form-control" placeholder="Razon Social">
                                   </div>
                                 </div>
                                    <div class="form-group">
@@ -95,11 +95,7 @@
                                 <div class="form-group">
                                   <label class="col-lg-4 control-label">Tipo de Usuario</label>
                                   <div class="col-lg-8">
-                                    <select name="tipo" class="form-control">
-                                        <option value="Administrador">Administrador</option>
-                                         <option value="Estudiante">Estudiante</option>
-                                          <option value="Profesor">Profesor</option>
-                                                         </select>
+                                    
                                   </div>
                                 </div>  
                                
