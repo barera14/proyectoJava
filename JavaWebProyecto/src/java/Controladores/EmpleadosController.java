@@ -124,18 +124,18 @@ public class EmpleadosController extends HttpServlet {
             Session sesion = HibernateUtil.getSessionFactory().openSession();
             
             Query q =(Query) sesion.createQuery("FROM Empleados");
-            ArrayList salones =(ArrayList) q.list();
+            ArrayList emp =(ArrayList) q.list();
             sesion.close();
             
             ArrayList<Empleados> sal = new ArrayList<Empleados>();
             
-            for(Object Salone: salones){
+            for(Object Salone: emp){
              Empleados salon = (Empleados) Salone;
              sal.add(salon);
              
             }
             
-            request.setAttribute("listaEmpleados", salones);
+            request.setAttribute("listaEmpleados", emp);
             
        try {     
             request.getRequestDispatcher("AdministarEmpleado.jsp").forward(request, response);

@@ -69,17 +69,16 @@
                       </thead>
                       <tbody>
 
-                     
-                          <c:forEach var="usua" items="${requestScope.listaEmpleados}">
+                      <c:forEach var="emp" items="${listaEmpleados}">
             <tr>
-                <td> <c:out value="${usua.nombres}"/></td>
-                <td> <c:out value="${usua.apellidos}"/></td>
-                <td> <c:out value="${usua.documento}"/></td>
-                <td> <c:out value="${usua.correo}"/></td>
-                <td><span class="label label-success"><c:out value="${usua.perfil}"/></span></td>
+                <td> <c:out value="${emp.nombres}"/></td>
+                <td> <c:out value="${emp.apellidos}"/></td>
+                <td> <c:out value="${emp.documento}"/></td>
+                <td> <c:out value="${emp.correo}"/></td>
+                <td><span class="label label-success"><c:out value="${emp.perfil}"/></span></td>
                 <td> 
-                    <button class="btn btn-sm btn-success" type="button" title="Editar"  onclick="location.href='EmpleadosController?action=update&id=${usua.id_empleado}'"><i class="icon-pencil"></i> </button>
-                    <button class="btn btn-sm btn-danger" type="button" title="Eliminar"  onclick="location.href='EmpleadosController?action=delete&id=${usua.id_empleado}'"><i class="icon-remove"></i></button>
+                    <button class="btn btn-sm btn-success" type="button" title="Editar"  onclick="location.href='EmpleadosController?action=update&id=${emp.idEmpleado}'"><i class="icon-pencil"></i> </button>
+                    <button class="btn btn-sm btn-danger" type="button" title="Eliminar"  onclick="location.href='EmpleadosController?action=delete&id=${emp.idEmpleado}'"><i class="icon-remove"></i></button>
                 </td>
                 
                 
