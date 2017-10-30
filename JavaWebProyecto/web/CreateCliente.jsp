@@ -91,7 +91,16 @@
                                   <div class="col-lg-8">
                                       <input name="password" type="password" class="form-control" placeholder="Contraseña">
                                   </div>
+<<<<<<< HEAD
                                 </div>                                                        <hr />
+=======
+                                </div>
+
+                              
+
+                               
+                                                                 
+>>>>>>> f38cedee2932833b5acf784f0642087111890d46
                                 <div class="form-group">
                                   <div class="col-lg-offset-1 col-lg-9">
                                     <button type="submit" class="btn btn-primary">Enviar</button>
