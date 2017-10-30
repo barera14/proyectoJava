@@ -92,16 +92,7 @@
                                       <input name="password" type="password" class="form-control" placeholder="Contraseña">
                                   </div>
                                 </div>
-                                <div class="form-group">
-                                  <label class="col-lg-4 control-label">Tipo de Usuario</label>
-                                  <div class="col-lg-8">
-                                    <select name="tipo" class="form-control">
-                                        <option value="Administrador">Administrador</option>
-                                         <option value="Estudiante">Estudiante</option>
-                                          <option value="Profesor">Profesor</option>
-                                                         </select>
-                                  </div>
-                                </div>  
+                                
                                
                                                                  <hr />
                                 <div class="form-group">
