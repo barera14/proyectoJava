@@ -1,5 +1,4 @@
-
-   <jsp:include page="Head.jsp" />
+<jsp:include page="Head.jsp" />
 <jsp:include page="menu.jsp"/>  
 
 
@@ -57,24 +56,30 @@
                       <thead>
                         <tr>
                           
-                          <th>Nombres</th>
-                          <th>Apellidos</th>
-                          <th>Documento</th>
-                          <th>Correo</th>
-                          <th>Perfil</th>
+                          <th>Razon Social</th>
+                          <th>Nit</th>
+                          <th>Ciudad</th>
+                          <th>Direccion</th>
+                          <th>Telefono</th>
+                          <th>Contraseña</th>
                           <th>Acciones</th>
                           
                         </tr>
                       </thead>
                       <tbody>
 
-                        <c:forEach var="usua" items="${requestScope.listausuarios}">
-            <tr>
-                <td> <c:out value="${usua.usuario}"/></td>
-                <td> <c:out value="${usua.perfil}"/></td>
-                
-                          <td><span class="label label-success"><c:out value="${usua.estado}"/></span></td>
+                      
+                      <c:forEach var="cli" items=${requestScope.ArrayCliente}>
                           
+                           <tr>
+                <td> <c:out value="${cli.razon_social}"/></td>
+                <td> <c:out value="${cli.nit}"/></td>
+                <td> <c:out value="${cli.ciudad}"/></td>
+                <td> <c:out value="${cli.direccion}"/></td>
+                <td> <c:out value="${cli.telefono}"/></td>
+                <td> <c:out value="${cli.password}"/></td>
+                
+                
                 <td> 
                     <button class="btn btn-sm btn-success" type="button" title="Editar"  onclick="location.href='UsuariosC?action=update&id=${usua.idUsuarios}'"><i class="icon-pencil"></i> </button>
                     <button class="btn btn-sm btn-danger" type="button" title="Eliminar"  onclick="location.href='UsuariosC?action=delete&id=${usua.idUsuarios}'"><i class="icon-remove"></i></button>
@@ -82,8 +87,7 @@
                 
                 
             </tr>
-        </c:forEach>
-
+                      </c:forEach>
                       </tbody>
                     </table>
 
