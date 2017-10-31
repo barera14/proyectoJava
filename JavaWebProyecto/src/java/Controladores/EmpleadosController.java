@@ -83,4 +83,63 @@ public class EmpleadosController extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+<<<<<<< HEAD
+=======
+    private void registrar(HttpServletRequest request, HttpServletResponse response){
+               String nombre=request.getParameter("nombres");
+          String apellido=request.getParameter("apellidos");
+          String documento=request.getParameter("documento");
+          String correo=request.getParameter("correo");
+          String passSIn=request.getParameter("password");
+          String encriptMD5=DigestUtils.md5Hex(passSIn);
+          System.out.println("incriptado"+encriptMD5);
+         
+          String perfil=request.getParameter("tipo");
+          
+            //Creamos objeto con datos de formulario
+            Empleados salon= new Empleados(nombre,apellido, documento,correo,encriptMD5,perfil);
+            //guardamos objeto en BD
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            session.save(salon);
+            session.getTransaction().commit();
+            session.close();
+    
+        try {
+            response.sendRedirect("EmpleadosController?action=admin");
+        } catch (IOException ex) {
+            Logger.getLogger(EmpleadosController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+            
+            
+ }
+    private void administrar(HttpServletRequest request, HttpServletResponse response){
+        
+            Session sesion = HibernateUtil.getSessionFactory().openSession();
+            
+            Query q =(Query) sesion.createQuery("FROM Empleados");
+            ArrayList emp =(ArrayList) q.list();
+            sesion.close();
+            
+            ArrayList<Empleados> sal = new ArrayList<Empleados>();
+            
+            for(Object Salone: emp){
+             Empleados salon = (Empleados) Salone;
+             sal.add(salon);
+             
+            }
+            
+            request.setAttribute("listaEmpleados", emp);
+            
+       try {     
+            request.getRequestDispatcher("AdministarEmpleado.jsp").forward(request, response);
+        } catch (ServletException ex) {
+            Logger.getLogger(EmpleadosController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(EmpleadosController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+>>>>>>> a0d150132a59c606d3fba254137213201972d643
 }

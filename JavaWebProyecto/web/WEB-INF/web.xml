@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
+<<<<<<< HEAD
         <servlet-name>ClientesController</servlet-name>
         <url-pattern>/ClientesController</url-pattern>
     </servlet>
     <servlet>
+=======
+<<<<<<< HEAD
+>>>>>>> a0d150132a59c606d3fba254137213201972d643
         <servlet-name>EmpleadosController</servlet-name>
         <servlet-class>Controladores.EmpleadosController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>EmpleadosController</servlet-name>
         <url-pattern>/EmpleadosController</url-pattern>
+=======
+        <servlet-name>ClientesController</servlet-name>
+        <servlet-class>Controladores.ClientesController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClientesController</servlet-name>
+        <url-pattern>/ClientesController</url-pattern>
+>>>>>>> f38cedee2932833b5acf784f0642087111890d46
     </servlet-mapping>
     <session-config>
         <session-timeout>
