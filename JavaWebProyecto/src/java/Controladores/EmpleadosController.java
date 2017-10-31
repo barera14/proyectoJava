@@ -5,20 +5,12 @@
  */
 package Controladores;
 
-import Modelo.Empleados;
-import Modelo.HibernateUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.commons.codec.digest.DigestUtils;
-import org.hibernate.Query;
-import org.hibernate.Session;
 
 /**
  *
@@ -38,17 +30,18 @@ public class EmpleadosController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       String action = request.getParameter("action");
-    
-    switch(action){
-        case "create":
-            registrar(request,response);
-            break;
-        case "admin":
-            administrar(request, response);
-            break;
-        
-    }
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet EmpleadosController</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet EmpleadosController at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -90,60 +83,4 @@ public class EmpleadosController extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private void registrar(HttpServletRequest request, HttpServletResponse response){
-               String nombre=request.getParameter("nombres");
-          String apellido=request.getParameter("apellidos");
-          String documento=request.getParameter("documento");
-          String correo=request.getParameter("correo");
-          String passSIn=request.getParameter("password");
-          String encriptMD5=DigestUtils.md5Hex(passSIn);
-          System.out.println("incriptado"+encriptMD5);
-         
-          String perfil=request.getParameter("tipo");
-          
-            //Creamos objeto con datos de formulario
-            Empleados salon= new Empleados(nombre,apellido, documento,correo,encriptMD5,perfil);
-            //guardamos objeto en BD
-            Session session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            session.save(salon);
-            session.getTransaction().commit();
-            session.close();
-    
-        try {
-            response.sendRedirect("EmpleadosController?action=admin");
-        } catch (IOException ex) {
-            Logger.getLogger(EmpleadosController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-            
-            
-            
- }
-    private void administrar(HttpServletRequest request, HttpServletResponse response){
-        
-            Session sesion = HibernateUtil.getSessionFactory().openSession();
-            
-            Query q =(Query) sesion.createQuery("FROM Empleados");
-            ArrayList salones =(ArrayList) q.list();
-            sesion.close();
-            
-            ArrayList<Empleados> sal = new ArrayList<Empleados>();
-            
-            for(Object Salone: salones){
-             Empleados salon = (Empleados) Salone;
-             sal.add(salon);
-             
-            }
-            
-            request.setAttribute("listaEmpleados", salones);
-            
-       try {     
-            request.getRequestDispatcher("AdministarEmpleado.jsp").forward(request, response);
-        } catch (ServletException ex) {
-            Logger.getLogger(EmpleadosController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(EmpleadosController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }
 }
